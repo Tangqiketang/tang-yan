@@ -25,11 +25,24 @@ public class MyController {
 		RspBean rspBean = new RspBean();
 		switch(action){
 		case ActionConstants.GET_PERSON:
-			
 			break;
 		default:
 			throw new RuntimeException();
 		}
+		rspBean.setCode(200);
+		return rspBean;
+	}
+	
+	@RequestMapping(value="/person/{action}",method=RequestMethod.GET,produces =MediaType.APPLICATION_JSON_VALUE)
+	public RspBean example2(@PathVariable("action")String action){
+		RspBean rspBean = new RspBean();
+		switch(action){
+		case ActionConstants.GET_PERSON:
+			break;
+		default:
+			throw new RuntimeException();
+		}
+		rspBean.setCode(200);
 		return rspBean;
 	}
 }

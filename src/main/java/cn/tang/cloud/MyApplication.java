@@ -12,9 +12,16 @@ public class MyApplication {
 		//SpringApplication.run(MyApplication.class, args);
 		//读取配置形式
 		ConfigurableApplicationContext context = new SpringApplicationBuilder(MyApplication.class)
-				.properties("spring.config.location=classpath:/config/my-config.properties")
-				.run(args);
+				.properties("spring.config.location=classpath:/config/my-config.properties").
+				run(args);
 		// 输出变量
 		System.out.println(context.getEnvironment().getProperty("user"));
+		
+		/*ConfigurableApplicationContext context = new SpringApplicationBuilder(
+				MyApplication.class)
+				.properties(
+				"spring.config.location=classpath:/my-profiles.yml")
+				.properties("spring.profiles.active=oracle").run(args);
+		System.out.println(context.getEnvironment().getProperty("jdbc.driver"));*/
 	}
 }

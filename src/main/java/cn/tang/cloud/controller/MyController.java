@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import cn.tang.cloud.constants.ActionConstants;
 import cn.tang.cloud.resp.RspBean;
+import cn.tang.cloud.utils.jedis.JedisPoolUtils;
 
 @RestController
 public class MyController {
@@ -39,10 +40,15 @@ public class MyController {
 		switch(action){
 		case ActionConstants.GET_PERSON:
 			break;
+		case ActionConstants.SET_PERSON:
+			JedisPoolUtils.set("name2", "wmwm");
+			break;
 		default:
 			throw new RuntimeException();
 		}
 		rspBean.setCode(200);
 		return rspBean;
 	}
+	
+	
 }

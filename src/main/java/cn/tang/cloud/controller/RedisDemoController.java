@@ -20,16 +20,16 @@ public class RedisDemoController {
 		RspBean rsp = new RspBean();
 		rsp.setCode(200);
 		
-		JedisPoolUtils.set("device_","yoyo");
+		JedisPoolUtils.set("device_","yoyo123");
 		
 		return rsp;
 	}
 	
 	//test
 	public static void main(String[] args) {
-		JedisPoolUtils.set("test_time",String.valueOf(System.currentTimeMillis()));
+		JedisPoolUtils.set("test_timeaa",String.valueOf(System.currentTimeMillis()));
 		
-		System.out.println(JedisPoolUtils.get("test_time"));
+		System.out.println(JedisPoolUtils.get("test_timeaa"));
 		
 		//JedisPoolUtils.del("test_time");
 		
